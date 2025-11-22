@@ -20,12 +20,24 @@
     </header>
 
     <main>
-        <div>1</div>
-        <div>2</div>
+        <div class="schedule-header">
+            <div class="schedule-title">
+                <h1>Sua agenda</h1>
+                <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+            </div>
+            <div class="calendar">
+                <label class="calendar-wrapper">
+                    <img src="./assets/calendar.svg" alt="Ícone de calendário">
+                    <input type="date" class="select-date" id="select-date">
+                    <img src="./assets/arrow-down.svg" alt="Ícone de seta apontando para baixo">
+                </label>
+            </div>
+        </div>
+        <div>list schedules</div>
     </main>
 
     <footer>
-        <button type="button">NOVO AGENDAMENTO</button>
+        <button type="button" id="new-schedule">NOVO AGENDAMENTO</button>
     </footer>
 </body>
 </html>
