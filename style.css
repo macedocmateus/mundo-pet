@@ -4,6 +4,8 @@
     --content-tertiary: #666666;
     --content-brand: #9282fa;
 
+    --background-body:#14151d;
+    --background-logo: #2e2c30;
     --background-primary: #151515;
     --background-secondary: #1e1e1e;
     --background-tertiary: #23242c;
@@ -15,6 +17,8 @@
     --border-brand: #9282fa;
     --border-divisor: #353339;
 
+    --color-text-button:#050505;
+
     --accent-blue: #027df0;
     --accent-blue-light: #16487a;
     --accent-yellow: #f0dc02;
@@ -23,6 +27,7 @@
     --accent-orange-light: #75501b;
 
     --font-title: 700 1.5rem/2rem 'Inter Tight', sans-serif;
+    --font-logo: 700 1rem/1.5rem 'Familjen Grotesk', sans-serif;
 
     --paragraph-medium: 500 0.875rem/1.5rem 'Inter', sans-serif;
     --paragraph-small: 500 0.75rem/1rem 'Inter', sans-serif;
@@ -50,4 +55,50 @@
 body {
     max-width: 100%;
     min-height: 100dvh;
+    background-color: var(--background-body);
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    width: 9.625rem;
+    height: 3rem;
+    background-color: var(--background-logo);
+    padding-inline: 1.25rem;
+    padding-block: 0.75rem;
+    border-bottom-right-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.logo span {
+    font: var(--font-logo);
+    color: var(--content-brand);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0.75rem 1.25rem;
+}
+
+footer {
+    margin: 0 auto;
+    width: 100vw;
+    height: 5.24rem;
+    background-color: var(--background-tertiary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer button{
+    font: var(--label-large);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background-color: var(--background-brand);
+    color: var(--color-text-button);
 }
