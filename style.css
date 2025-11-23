@@ -146,6 +146,50 @@ main {
     display: none;
 }
 
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-tertiary);
+    border-radius: 0.625rem;
+}
+
+.schedule-information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+}
+
+.schedule-information span {
+    flex: 1;
+    font: var(--label-large);
+    color: var(--content-primary);
+}
+
+.schedule-information small {
+    font: var(--label-large);
+    color: var(--content-secondary);
+}
+
+.schedule-description {
+    display: flex;
+    flex-direction: row;
+    padding: 1.25rem;
+}
+
+.divisor {
+    border-bottom: 1px solid var(--border-divisor);
+    width: 100%;
+    height: 0;
+}
+
 footer {
     margin: 0 auto;
     width: 100vw;
