@@ -19,137 +19,138 @@
         </div>
     </header>
 
-    <main>
-        <div class="schedule-header">
-            <div class="schedule-title">
-                <h1>Sua agenda</h1>
-                <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
-            </div>
-            <div class="calendar">
-                <label class="calendar-wrapper">
-                    <img src="./assets/calendar.svg" alt="Ícone de calendário">
-                    <input type="date" class="select-date" id="select-date">
-                    <img src="./assets/arrow-down.svg" alt="Ícone de seta apontando para baixo">
-                </label>
-            </div>
-        </div>
-        <div class="schedule-list">
-            <div class="morning-schedules card">
-                <div class="schedule-information">
-                    <img src="./assets/sun-fog.svg" alt="Ícone de sol">
-                    <span>Manhã</span>
-                    <small>09h-12h</small>
+    <div class="main-layout">
+        <main>
+            <div class="schedule-header">
+                <div class="schedule-title">
+                    <h1>Sua agenda</h1>
+                    <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
                 </div>
-                <div class="divisor"></div>
-                
-                <div class="schedule-item">
-                    <div class="schedule-wrapper">
-                        <div class="schedule-important-information">
-                            <span class="hour" id="hour">09:00</span>
-                            <div class="customer-pet">
-                                <span class="pet-name" id="pet-name">Thor</span>
-                                /
-                                <span class="customer-name" id="customer-name">Fernanda Costa</span>
-                            </div>
-                        </div>
-                        <span class="activity" id="activity">Vacinação</span>
-                    </div>
-                    <div class="delete-item-wrapper">
-                        <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
-                    </div>
+                <div class="calendar">
+                    <label class="calendar-wrapper">
+                        <img src="./assets/calendar.svg" alt="Ícone de calendário">
+                        <input type="date" class="select-date" id="select-date">
+                        <img src="./assets/arrow-down.svg" alt="Ícone de seta apontando para baixo">
+                    </label>
                 </div>
             </div>
-            
-            <div class="afternoon-schedules card">
-                <div class="schedule-information">
-                    <img src="./assets/cloud-sun.svg" alt="Ícone de por do sol">
-                    <span>Tarde</span>
-                    <small>13h-18h</small>
-                </div>
-                <div class="divisor"></div>
-                
-                <div class="schedule-item">
-                    <div class="schedule-wrapper">
-                        <div class="schedule-important-information">
-                            <span class="hour" id="hour">13:00</span>
-                            <div class="customer-pet">
-                                <span class="pet-name" id="pet-name">Mel</span>
-                                /
-                                <span class="customer-name" id="customer-name">João Souza</span>
+            <div class="schedule-list">
+                <div class="morning-schedules card">
+                    <div class="schedule-information">
+                        <img src="./assets/sun-fog.svg" alt="Ícone de sol">
+                        <span>Manhã</span>
+                        <small>09h-12h</small>
+                    </div>
+                    <div class="divisor"></div>
+        
+                    <div class="schedule-item">
+                        <div class="schedule-wrapper">
+                            <div class="schedule-important-information">
+                                <span class="hour" id="hour">09:00</span>
+                                <div class="customer-pet">
+                                    <span class="pet-name" id="pet-name">Thor</span>
+                                    /
+                                    <span class="customer-name" id="customer-name">Fernanda Costa</span>
+                                </div>
                             </div>
+                            <span class="activity" id="activity">Vacinação</span>
                         </div>
-                        <span class="activity" id="activity">Corte de Unhas</span>
-                    </div>
-                    <div class="delete-item-wrapper">
-                        <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
-                        <div class="divisor"></div>
-                    </div>
-                </div>
-                <div class="schedule-item">
-                    <div class="schedule-wrapper">
-                        <div class="schedule-important-information">
-                            <span class="hour" id="hour">14:00</span>
-                            <div class="customer-pet">
-                                <span class="pet-name" id="pet-name">Bella</span>
-                                /
-                                <span class="customer-name" id="customer-name">Pedro Martins</span>
-                            </div>
+                        <div class="delete-item-wrapper">
+                            <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
                         </div>
-                        <span class="activity" id="activity">Aplicação Anti-pulgas</span>
-                    </div>
-                    <div class="delete-item-wrapper">
-                        <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
-                        <div class="divisor"></div>
                     </div>
                 </div>
-                <div class="schedule-item">
-                    <div class="schedule-wrapper">
-                        <div class="schedule-important-information">
-                            <span class="hour" id="hour">15:00</span>
-                            <div class="customer-pet">
-                                <span class="pet-name" id="pet-name">Simba</span>
-                                /
-                                <span class="customer-name" id="customer-name">Juliana Rocha</span>
-                            </div>
-                        </div>
-                        <span class="activity" id="activity">Tosa Higiênica</span>
+        
+                <div class="afternoon-schedules card">
+                    <div class="schedule-information">
+                        <img src="./assets/cloud-sun.svg" alt="Ícone de por do sol">
+                        <span>Tarde</span>
+                        <small>13h-18h</small>
                     </div>
-                    <div class="delete-item-wrapper">
-                        <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
+                    <div class="divisor"></div>
+        
+                    <div class="schedule-item">
+                        <div class="schedule-wrapper">
+                            <div class="schedule-important-information">
+                                <span class="hour" id="hour">13:00</span>
+                                <div class="customer-pet">
+                                    <span class="pet-name" id="pet-name">Mel</span>
+                                    /
+                                    <span class="customer-name" id="customer-name">João Souza</span>
+                                </div>
+                            </div>
+                            <span class="activity" id="activity">Corte de Unhas</span>
+                        </div>
+                        <div class="delete-item-wrapper">
+                            <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
+                            <div class="divisor"></div>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-wrapper">
+                            <div class="schedule-important-information">
+                                <span class="hour" id="hour">14:00</span>
+                                <div class="customer-pet">
+                                    <span class="pet-name" id="pet-name">Bella</span>
+                                    /
+                                    <span class="customer-name" id="customer-name">Pedro Martins</span>
+                                </div>
+                            </div>
+                            <span class="activity" id="activity">Aplicação Anti-pulgas</span>
+                        </div>
+                        <div class="delete-item-wrapper">
+                            <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
+                            <div class="divisor"></div>
+                        </div>
+                    </div>
+                    <div class="schedule-item">
+                        <div class="schedule-wrapper">
+                            <div class="schedule-important-information">
+                                <span class="hour" id="hour">15:00</span>
+                                <div class="customer-pet">
+                                    <span class="pet-name" id="pet-name">Simba</span>
+                                    /
+                                    <span class="customer-name" id="customer-name">Juliana Rocha</span>
+                                </div>
+                            </div>
+                            <span class="activity" id="activity">Tosa Higiênica</span>
+                        </div>
+                        <div class="delete-item-wrapper">
+                            <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="evening-schedules card">
+                    <div class="schedule-information">
+                        <img src="./assets/moon-stars.svg" alt="Ícone de lua">
+                        <span>Noite</span>
+                        <small>19h-21h</small>
+                    </div>
+                    <div class="divisor"></div>
+        
+                    <div class="schedule-item">
+                        <div class="schedule-wrapper">
+                            <div class="schedule-important-information">
+                                <span class="hour" id="hour">20:00</span>
+                                <div class="customer-pet">
+                                    <span class="pet-name" id="pet-name">Max</span>
+                                    /
+                                    <span class="customer-name" id="customer-name">Camila Santos</span>
+                                </div>
+                            </div>
+                            <span class="activity" id="activity">Limpeza de Dentes</span>
+                        </div>
+                        <div class="delete-item-wrapper">
+                            <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="evening-schedules card">
-                <div class="schedule-information">
-                    <img src="./assets/moon-stars.svg" alt="Ícone de lua">
-                    <span>Noite</span>
-                    <small>19h-21h</small>
-                </div>
-                <div class="divisor"></div>
-                
-                <div class="schedule-item">
-                    <div class="schedule-wrapper">
-                        <div class="schedule-important-information">
-                            <span class="hour" id="hour">20:00</span>
-                            <div class="customer-pet">
-                                <span class="pet-name" id="pet-name">Max</span>
-                                /
-                                <span class="customer-name" id="customer-name">Camila Santos</span>
-                            </div>
-                        </div>
-                        <span class="activity" id="activity">Limpeza de Dentes</span>
-                    </div>
-                    <div class="delete-item-wrapper">
-                        <button type="button" class="delete-item" id="delete-item">Remover agendamento</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <button type="button" id="new-schedule">NOVO AGENDAMENTO</button>
-    </footer>
+        </main>
+        <footer>
+            <button type="button" id="new-schedule">NOVO AGENDAMENTO</button>
+        </footer>
+    </div>
 </body>
 </html>

@@ -61,6 +61,11 @@ body {
     flex-direction: column;
 }
 
+.main-layout {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo {
     display: flex;
     align-items: center;
@@ -82,7 +87,6 @@ body {
 main {
     display: flex;
     flex-direction: column;
-    flex: 1;
     padding: 0.75rem 1.25rem;
     gap: 2rem;
 }
@@ -226,7 +230,6 @@ main {
 }
 
 footer {
-    margin: 0 auto;
     width: 100vw;
     height: 5.24rem;
     background-color: var(--background-tertiary);
@@ -241,4 +244,40 @@ footer button{
     border-radius: 0.5rem;
     background-color: var(--background-brand);
     color: var(--color-text-button);
+    cursor: pointer;
+}
+
+@media(width >= 48rem) {
+    .logo {
+        margin-bottom: 0;
+    }
+    
+    main {
+        flex: none;
+        padding: 5rem;
+        max-width: 48rem;
+        margin: 0 auto;
+    }
+
+    .schedule-header {
+        flex-direction: row;
+    }
+    
+}
+
+@media(width >= 67.875rem) {
+    .main-layout {
+        flex-direction: row;
+        justify-content: center;
+        align-items: end;
+    }
+
+    main {
+        margin: 0;
+    }
+    
+    footer {
+        background-color: transparent;
+        width: fit-content;
+    }
 }
