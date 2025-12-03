@@ -26,11 +26,63 @@
                     <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
                 </div>
                 <div class="schedule-search">
-                    <input type="date" class="filter-date" id="filter-date">
+                    <img src="./assets/calendar.svg" alt="Ícone de calendário">
+                    <input type="date" class="filter-date" id="filter-date" placeholder="teste">
+                    <img src="./assets/arrow-down.svg" alt="ícone de uma seta apontando para baixo">
                 </div>
             </div>
             
-            <div>lista</div>
+            <div class="schedule-list" id="schedule-list">
+                <div class="morning-card">
+                    <div class="morning-hour" id="morning-hour">
+                        <div class="morning-header" id="morning-header">
+                            <img src="./assets/sun-fog.svg" alt="Ícone do sol">
+                            <span>Manhã</span>
+                            <small>09h-12h</small>
+                        </div>
+                    </div>
+                    <div class="clients">
+                        <div class="client">
+                            <div class="client-information">
+                                <div class="client-description">
+                                    <small class="hour" id="hour">09:00</small>
+                                    <span class="pet-name" id="pet-name">Thor</span>
+                                    /
+                                    <span class="client-name" id="client-name">Fernanda Costa</span>
+                                </div>
+                                <span class="activity" id="activity">Vacinação</span>
+                            </div>
+                            
+                            <button type="button" class="delete-client" id="delete-client">Remover agendamento</button>
+                            <div class="divider"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="afternoon-card">
+                    <div class="afternoon-hour" id="afternoon-hour">
+                        <div class="afternoon-header" id="afternoon-header">
+                            <img src="./assets/sun-fog.svg" alt="Ícone do sol">
+                            <span>Tarde</span>
+                            <small>13h-18h</small>
+                        </div>
+                    </div>
+                    <div class="clients">
+                    </div>
+                </div>
+
+                <div class="evening-card">
+                    <div class="evening-hour" id="evening-hour">
+                        <div class="evening-header" id="evening-header">
+                            <img src="./assets/sun-fog.svg" alt="Ícone do sol">
+                            <span>Noite</span>
+                            <small>19h-21h</small>
+                        </div>
+                    </div>
+                    <div class="clients">
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
