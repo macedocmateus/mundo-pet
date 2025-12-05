@@ -89,5 +89,66 @@
     <div class="wrapper-button">
         <button type="button" class="new-schedule" id="new-schedule">NOVO AGENDAMENTO</button>
     </div>
+
+    <dialog id="modal" class="modal">
+        <div class="modal-wrapper">
+            <img class="close-modal" id="close-modal" src="./assets/close.svg" alt="Ícone de fechar o modal">
+            <div class="modal-header">
+                <h1>Agende um atendimento</h1>
+                <p>Preencha os dados do cliente para realizar o agendamento:</p>
+            </div>
+            
+            <form class="client-form" id="client-form">
+                <div class="form-group">
+                    <label for="client-name">Nome do tutor</label>
+                    <div class="input-icon-wrapper">
+                        <img src="./assets/user.svg" alt="Ícone de usuário de cor roxa">
+                        <input type="text" name="clientName" id="client-name" placeholder="Helena Souza">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="pet-name">Nome do pet</label>
+                    <div class="input-icon-wrapper">
+                        <img src="./assets/pet-paw.svg" alt="Ícone de uma pata de cachorro de cor roxa">
+                        <input type="text" name="petName" id="pet-name" placeholder="Cheddar">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone-number">Telefone</label>
+                    <div class="input-icon-wrapper">
+                        <img src="./assets/phone.svg" alt="Ícone de telefone de cor roxa">
+                        <input type="tel" name="phone" id="phone-number" placeholder="(00) 0 0000-0000">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="service-description">Descrição do serviço</label>
+                    <div class="input-icon-wrapper">
+                        <textarea name="serviceDescription" id="service-description"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Data</label>
+                    <div class="input-icon-wrapper">
+                        <img src="./assets/calendar.svg" alt="Ícone de calendário de cor roxa">
+                        <input type="date" name="date" id="date" placeholder="10/01/2024">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="hour">Hora</label>
+                    <div class="input-icon-wrapper">
+                        <img src="./assets/clock-circle.svg" alt="Ícone de relógio de cor roxa">
+                        <input type="time" name="hour" id="hour" placeholder="12:00">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-submit" id="btn-submit">Agendar</button>
+            </form>
+        </div>
+    </dialog>
 </body>
 </html>
