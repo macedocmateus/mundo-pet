@@ -134,16 +134,16 @@ main {
     font: 400 1rem/1.5rem 'Inter', sans-serif;
     color: var(--content-secondary);
     background-color: transparent;
-}
 
-::-webkit-calendar-picker-indicator {
-    background-color: blue;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    opacity: 0;
-    left: 0;
-    cursor: pointer;
+    &::-webkit-calendar-picker-indicator {
+        background-color: blue;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        opacity: 0;
+        left: 0;
+        cursor: pointer;
+    }
 }
 
 .schedule-list {
@@ -248,41 +248,52 @@ main {
     }
 }
 
-
 .modal {
     background-color: var(--background-tertiary);
-    padding: 2.5rem 1.25rem 0;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 29.75rem;
     width: 90%;
-    max-width: 29.875rem;
-    margin: 4.75rem auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
     position: relative;
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(12px);
+    }
 }
 
-
-.modal::backdrop {
-    background-color: rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px);
-}
-
-.modal-wrapper {
+.modal-close {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0.5rem;
     display: flex;
-    flex-direction: column;
-    gap: 1.75rem;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    right: 0;
 }
 
-.close-modal {
-    position: absolute;
+.modal-close img {
     width: 2.25rem;
     height: 2.25rem;
-    top: 0;
-    right: 0;
-    cursor: pointer;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.75rem;
 }
 
 .modal-header h1 {
     font: var(--font-title);
-    color: var(--content-primary);
+    color: var(--content-title);
 }
 
 .modal-header p {
@@ -290,7 +301,7 @@ main {
     color: var(--content-secondary);
 }
 
-.client-form {
+.modal-form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -307,39 +318,83 @@ main {
     color: var(--content-primary);
 }
 
-.input-icon-wrapper {
+.input-wrapper {
     display: flex;
-    gap: 0.5rem;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: transparent;
     border: 1px solid var(--border-primary);
-    padding: 0.75rem;
     border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus-within {
+        border-color: var(--border-brand);
+    }
 }
 
-.input-icon-wrapper input, textarea {
-    background-color: transparent;
+.input-wrapper img {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.input-wrapper input {
+    flex: 1;
     font: var(--font-input);
     color: var(--content-primary);
-    flex: 1;
+    background-color: transparent;
+    border: none;
+
+    &::placeholder {
+        color: var(--content-tertiary);
+    }
 }
 
-.input-icon-wrapper input::placeholder {
-    color: var(--content-secondary);
-}
-
-.input-icon-wrapper textarea {
+.form-group textarea {
+    font: var(--font-input);
+    color: var(--content-primary);
+    background-color: transparent;
+    border: 1px solid var(--border-primary);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
     resize: none;
-    overflow: hidden;
-    height: 5.25rem;
+
+    &::placeholder {
+        color: var(--content-tertiary);
+    }
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus {
+        border-color: var(--border-brand);
+    }
+}
+
+.date-time-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: end;
+    margin-top: 1.7rem;
 }
 
 .btn-submit {
-    width: fit-content;
-    align-self: end;
-    background-color: var(--background-brand);
+    font: var(--label-large);
     color: var(--color-text-button);
+    background-color: var(--background-brand);
     padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
-    font: var(--label-large);
     cursor: pointer;
 
     &:hover {
@@ -361,13 +416,21 @@ main {
         flex-direction: row;
         justify-content: space-between;
     }
+
+    .date-time-wrapper {
+        flex-direction: row;
+    }
+
+    .date-time-wrapper .form-group {
+        flex: 1;
+    }
 }
 
 @media(width >= 64rem) {
     main {
         flex: 0;
     }
-    
+
     .wrapper-button {
         background-color: transparent;
         text-align: center;

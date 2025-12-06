@@ -1,17 +1,35 @@
 const modal = document.getElementById('modal');
-const newSchedule = document.getElementById('new-schedule');
-const closeModal = document.getElementById('close-modal')
+const modalForm = document.getElementById('modal-form');
+const newScheduleBtn = document.getElementById('new-schedule');
+const modalCloseBtn = document.getElementById('modal-close');
 
-newSchedule.addEventListener('click', () => {
+function openModal() {
     modal.showModal();
-});
+}
 
-closeModal.addEventListener('click', () => {
+function closeModal() {
     modal.close();
-})
+    modalForm.reset();
+}
 
-modal.addEventListener('click', (event) => {
+function handleSubmit(event) {
+    event.preventDefault();
+
+    const formData = new FormData(modalForm);
+    const data = Object.fromEntries(formData);
+
+    console.log('Dados do formulário:', data);
+
+    closeModal();
+}
+
+function handleBackdropClick(event) {
     if (event.target === modal) {
-        modal.close();
+        closeModal();
     }
-})
+}
+
+newScheduleBtn.addEventListener('click', openModal);
+modalCloseBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', handleBackdropClick);
+modalForm.addEventListener('submit', handleSubmit);
