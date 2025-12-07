@@ -325,7 +325,7 @@ main {
     background-color: transparent;
     border: 1px solid var(--border-primary);
     border-radius: 0.5rem;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem;
 
     &:hover {
         border-color: var(--border-secondary);
@@ -382,6 +382,34 @@ main {
     gap: 1rem;
 }
 
+.date-time-wrapper .date-wrapper, .hour-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-primary);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.date-time-wrapper .date-wrapper input, .hour-wrapper input {
+    flex: 1;
+    background-color: transparent;
+    font: var(--font-input);
+    color: var(--content-primary);
+
+    &::-webkit-calendar-picker-indicator {
+        position: absolute;
+        background-color: blue;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
 .modal-actions {
     display: flex;
     gap: 0.75rem;
@@ -419,10 +447,6 @@ main {
 
     .date-time-wrapper {
         flex-direction: row;
-    }
-
-    .date-time-wrapper .form-group {
-        flex: 1;
     }
 }
 
