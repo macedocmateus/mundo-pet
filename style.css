@@ -258,8 +258,6 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    margin: 0;
-    position: relative;
 
     &::backdrop {
         background-color: rgba(0, 0, 0, 0.7);
@@ -267,10 +265,13 @@ main {
     }
 }
 
+.modal label {
+    display: block;
+}
+
 .modal-close {
     background-color: transparent;
     cursor: pointer;
-    padding: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -331,7 +332,7 @@ main {
         border-color: var(--border-secondary);
     }
 
-    &:focus-within {
+    &:focus, &:focus-within {
         border-color: var(--border-brand);
     }
 }
@@ -371,7 +372,7 @@ main {
         border-color: var(--border-secondary);
     }
 
-    &:focus {
+    &:focus, &:focus-within {
         border-color: var(--border-brand);
     }
 }
@@ -391,6 +392,14 @@ main {
     border-radius: 0.5rem;
     position: relative;
     overflow: hidden;
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus, &:focus-within {
+        border-color: var(--border-brand);
+    }
 }
 
 .date-time-wrapper .date-wrapper input, .hour-wrapper input {
@@ -447,6 +456,10 @@ main {
 
     .date-time-wrapper {
         flex-direction: row;
+    }
+
+    .date-time-wrapper .form-group {
+        flex: 1;
     }
 }
 
