@@ -6,15 +6,15 @@
     <link href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Familjen+Grotesk:regular,500,600,700,italic,500italic,600italic,700italic" rel="stylesheet" />
-    <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js" defer></script>
+    <link rel="shortcut icon" href="./src/assets/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/styles/style.css">
+    <script type="module" src="./src/main.js" defer></script>
     <title>Mundo Pet</title>
 </head>
 
 <body>
     <div class="logo">
-        <img src="./assets/logo.svg" alt="logo do site, ícone de um cachorro">
+        <img src="./src/assets/logo.svg" alt="logo do site, ícone de um cachorro">
         <span>MUNDO PET</span>
     </div>
 
@@ -26,9 +26,9 @@
                     <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
                 </div>
                 <label for="filter-date" class="schedule-search">
-                    <img src="./assets/calendar.svg" alt="Ícone de calendário">
+                    <img src="./src/assets/calendar.svg" alt="Ícone de calendário">
                     <input type="date" class="filter-date" id="filter-date" placeholder="teste">
-                    <img src="./assets/arrow-down.svg" alt="ícone de uma seta apontando para baixo">
+                    <img src="./src/assets/arrow-down.svg" alt="ícone de uma seta apontando para baixo">
                 </label>
             </div>
             
@@ -36,7 +36,7 @@
                 <div class="morning-card">
                     <div class="morning-hour" id="morning-hour">
                         <div class="morning-header" id="morning-header">
-                            <img src="./assets/sun-fog.svg" alt="Ícone do sol">
+                            <img src="./src/assets/sun-fog.svg" alt="Ícone do sol">
                             <span>Manhã</span>
                             <small>09h-12h</small>
                         </div>
@@ -62,7 +62,7 @@
                 <div class="afternoon-card">
                     <div class="afternoon-hour" id="afternoon-hour">
                         <div class="afternoon-header" id="afternoon-header">
-                            <img src="./assets/sun-fog.svg" alt="Ícone do sol">
+                            <img src="./src/assets/sun-fog.svg" alt="Ícone do sol">
                             <span>Tarde</span>
                             <small>13h-18h</small>
                         </div>
@@ -74,7 +74,7 @@
                 <div class="evening-card">
                     <div class="evening-hour" id="evening-hour">
                         <div class="evening-header" id="evening-header">
-                            <img src="./assets/sun-fog.svg" alt="Ícone do sol">
+                            <img src="./src/assets/sun-fog.svg" alt="Ícone do sol">
                             <span>Noite</span>
                             <small>19h-21h</small>
                         </div>
@@ -95,7 +95,7 @@
             <h1>Agende um atendimento</h1>
             <p>Preencha os dados do cliente para realizar o agendamento:</p>
             <button type="button" class="modal-close" id="modal-close">
-                <img src="./assets/close.svg" alt="Fechar modal">
+                <img src="./src/assets/close.svg" alt="Fechar modal">
             </button>
         </div>
 
@@ -103,7 +103,7 @@
             <div class="form-group">
                 <label for="client-name-input">Nome do tutor</label>
                 <div class="input-wrapper">
-                    <img src="./assets/user.svg" alt="Ícone de usuário">
+                    <img src="./src/assets/user.svg" alt="Ícone de usuário">
                     <input type="text" id="client-name-input" name="clientName" placeholder="Digite o nome do cliente" required>
                 </div>
             </div>
@@ -111,7 +111,7 @@
             <div class="form-group">
                 <label for="pet-name-input">Nome do pet</label>
                 <div class="input-wrapper">
-                    <img src="./assets/pet-paw.svg" alt="Ícone de pata">
+                    <img src="./src/assets/pet-paw.svg" alt="Ícone de pata">
                     <input type="text" id="pet-name-input" name="petName" placeholder="Digite o nome do pet" required>
                 </div>
             </div>
@@ -119,7 +119,7 @@
             <div class="form-group">
                 <label for="phone-input">Telefone</label>
                 <div class="input-wrapper">
-                    <img src="./assets/phone.svg" alt="Ícone de telefone">
+                    <img src="./src/assets/phone.svg" alt="Ícone de telefone">
                     <input type="tel" id="phone-input" name="phone" placeholder="(00) 0 0000-0000" required>
                 </div>
             </div>
@@ -133,18 +133,18 @@
                 <div class="form-group">
                     <label for="input-date">Data</label>
                     <div class="date-wrapper">
-                        <img src="./assets/calendar.svg" alt="Ícone de abrir calendário">
+                        <img src="./src/assets/calendar.svg" alt="Ícone de abrir calendário">
                         <input type="date" class="input-date" id="input-date">
-                        <img src="./assets/arrow-down.svg" alt="Seta apontada para baixo para abrir e fechar calendário">
+                        <img src="./src/assets/arrow-down.svg" alt="Seta apontada para baixo para abrir e fechar calendário">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="input-hour">Hora</label>
                     <div class="hour-wrapper">
-                        <img src="./assets/clock-circle.svg" alt="Ícone de abrir relógio">
+                        <img src="./src/assets/clock-circle.svg" alt="Ícone de abrir relógio">
                         <input type="time" class="input-hour" id="input-hour">
-                        <img src="./assets/arrow-down.svg" alt="Seta apontada para baixo para abrir e fechar relógio">
+                        <img src="./src/assets/arrow-down.svg" alt="Seta apontada para baixo para abrir e fechar relógio">
                     </div>
                 </div>
             </div>
