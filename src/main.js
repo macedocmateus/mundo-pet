@@ -1,3 +1,9 @@
+"use strict"
+
+import "./styles/global.css"
+import "./styles/page.css"
+import "./styles/form-modal.css"
+
 const modal = document.getElementById('modal');
 const modalForm = document.getElementById('modal-form');
 const newScheduleBtn = document.getElementById('new-schedule');

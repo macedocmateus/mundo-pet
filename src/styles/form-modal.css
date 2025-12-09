@@ -1,0 +1,190 @@
+.modal {
+    background-color: var(--background-tertiary);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 29.75rem;
+    width: 90%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(12px);
+    }
+}
+
+.modal label {
+    display: block;
+}
+
+.modal-close {
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.modal-close img {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1.75rem;
+}
+
+.modal-header h1 {
+    font: var(--font-title);
+    color: var(--content-title);
+}
+
+.modal-header p {
+    font: var(--paragraph-medium);
+    color: var(--content-secondary);
+}
+
+.modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.form-group label {
+    font: var(--label-medium);
+    color: var(--content-primary);
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: transparent;
+    border: 1px solid var(--border-primary);
+    border-radius: 0.5rem;
+    padding: 0.75rem;
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus, &:focus-within {
+        border-color: var(--border-brand);
+    }
+}
+
+.input-wrapper img {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex-shrink: 0;
+}
+
+.input-wrapper input {
+    flex: 1;
+    font: var(--font-input);
+    color: var(--content-primary);
+    background-color: transparent;
+    border: none;
+
+    &::placeholder {
+        color: var(--content-tertiary);
+    }
+}
+
+.form-group textarea {
+    font: var(--font-input);
+    color: var(--content-primary);
+    background-color: transparent;
+    border: 1px solid var(--border-primary);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    resize: none;
+
+    &::placeholder {
+        color: var(--content-tertiary);
+    }
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus, &:focus-within {
+        border-color: var(--border-brand);
+    }
+}
+
+.date-time-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.date-time-wrapper .date-wrapper, .hour-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border-primary);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus, &:focus-within {
+        border-color: var(--border-brand);
+    }
+}
+
+.date-time-wrapper .date-wrapper input, .hour-wrapper input {
+    flex: 1;
+    background-color: transparent;
+    font: var(--font-input);
+    color: var(--content-primary);
+
+    &::-webkit-calendar-picker-indicator {
+        position: absolute;
+        background-color: blue;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        right: 0;
+        cursor: pointer;
+    }
+}
+
+.modal-actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: end;
+    margin-top: 1.7rem;
+}
+
+.btn-submit {
+    font: var(--label-large);
+    color: var(--color-text-button);
+    background-color: var(--background-brand);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--background-highlights);
+    }
+}
