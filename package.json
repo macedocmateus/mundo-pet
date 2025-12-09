@@ -1,4 +1,7 @@
 {
+  "name": "Mundo Pet",
+  "description": "Aplicação Web de agendamento para tratamento de pets",
+  "author": "Mateus Macedo",
   "scripts": {
     "server": "json-server --watch server.json --port 3333"
   },
