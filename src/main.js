@@ -1,5 +1,7 @@
 "use strict"
 
+import "./libs/dayjs.js"
+
 import "./styles/global.css"
 import "./styles/page.css"
 import "./styles/form-modal.css"
