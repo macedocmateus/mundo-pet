@@ -3,13 +3,35 @@
 import "./styles/global.css"
 import "./styles/page.css"
 import "./styles/form-modal.css"
+import "./styles/responsivity.css"
+
+import dayjs from "dayjs"
 
 const modal = document.getElementById('modal');
 const modalForm = document.getElementById('modal-form');
 const newScheduleBtn = document.getElementById('new-schedule');
 const modalCloseBtn = document.getElementById('modal-close');
+const filterDateInput = document.getElementById('filter-date');
+const inputDate = document.getElementById('input-date');
+
+// Array para armazenar todos os agendamentos
+let schedules = [];
+
+// Retorna a data de hoje formatada para o input date (YYYY-MM-DD)
+function getTodayDate() {
+    return dayjs().format('YYYY-MM-DD');
+}
+
+// Define a data mínima permitida nos inputs de data
+// Impede que o usuário selecione datas no passado via navegador
+function setMinDate() {
+    const today = getTodayDate();
+    inputDate.setAttribute('min', today);
+    filterDateInput.setAttribute('min', today);
+}
 
 function openModal() {
+    setMinDate();
     modal.showModal();
 }
 
@@ -77,6 +99,44 @@ function addScheduleToList(scheduleElement, period) {
     clientsList.appendChild(scheduleElement);
 }
 
+// Limpa todas as listas de clientes antes de renderizar
+function clearScheduleLists() {
+    const clientsLists = document.querySelectorAll('.clients');
+    clientsLists.forEach(list => list.innerHTML = '');
+}
+
+// Renderiza os agendamentos filtrados por data
+function renderSchedulesByDate(date) {
+    // Limpa as listas antes de renderizar
+    clearScheduleLists();
+
+    // Filtra os agendamentos pela data selecionada
+    const filteredSchedules = schedules.filter(schedule => schedule.date === date);
+
+    // Renderiza cada agendamento filtrado
+    filteredSchedules.forEach(schedule => {
+        const period = getPeriodByHour(schedule.hour);
+        const scheduleElement = createScheduleElement(schedule);
+        addScheduleToList(scheduleElement, period);
+    });
+}
+
+// Manipula a mudança no filtro de data
+function handleFilterDate(event) {
+    const selectedDate = event.target.value;
+
+    if (selectedDate) {
+        renderSchedulesByDate(selectedDate);
+    }
+}
+
+// Valida se a data selecionada não está no passado
+function isDateInPast(date) {
+    const selectedDate = dayjs(date);
+    const today = dayjs().startOf('day');
+    return selectedDate.isBefore(today);
+}
+
 // Manipula o envio do formulário de agendamento
 function handleSubmit(event) {
     // Previne o comportamento padrão do formulário (recarregar a página)
@@ -90,16 +150,34 @@ function handleSubmit(event) {
     // Resultado: { clientName: "...", petName: "...", phone: "...", service: "...", date: "...", hour: "..." }
     const data = Object.fromEntries(formData);
 
-    // 1. Identifica em qual período o agendamento deve ser inserido
-    const period = getPeriodByHour(data.hour);
+    // Validação extra: impede agendamentos em datas passadas
+    if (isDateInPast(data.date)) {
+        alert('Não é possível criar agendamentos em datas passadas.');
+        return;
+    }
 
-    // 2. Cria o elemento HTML com os dados do agendamento
-    const scheduleElement = createScheduleElement(data);
+    // 1. Armazena o agendamento no array
+    schedules.push(data);
 
-    // 3. Insere o elemento na lista correta (manhã, tarde ou noite)
-    addScheduleToList(scheduleElement, period);
+    // 2. Se há uma data selecionada no filtro, renderiza apenas os agendamentos dessa data
+    // Caso contrário, adiciona diretamente na lista
+    const selectedFilterDate = filterDateInput.value;
 
-    // 4. Fecha o modal e limpa o formulário
+    if (selectedFilterDate) {
+        // Re-renderiza apenas se a data do novo agendamento corresponde ao filtro
+        if (data.date === selectedFilterDate) {
+            const period = getPeriodByHour(data.hour);
+            const scheduleElement = createScheduleElement(data);
+            addScheduleToList(scheduleElement, period);
+        }
+    } else {
+        // Sem filtro ativo: adiciona diretamente na lista
+        const period = getPeriodByHour(data.hour);
+        const scheduleElement = createScheduleElement(data);
+        addScheduleToList(scheduleElement, period);
+    }
+
+    // 3. Fecha o modal e limpa o formulário
     closeModal();
 }
 
@@ -113,3 +191,7 @@ newScheduleBtn.addEventListener('click', openModal);
 modalCloseBtn.addEventListener('click', closeModal);
 modal.addEventListener('click', handleBackdropClick);
 modalForm.addEventListener('submit', handleSubmit);
+filterDateInput.addEventListener('change', handleFilterDate);
+
+// Inicializa a data mínima nos inputs ao carregar a página
+setMinDate();

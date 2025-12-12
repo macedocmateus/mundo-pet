@@ -133,9 +133,14 @@
     gap: 1rem;
 }
 
-.date-time-wrapper .date-wrapper, .hour-wrapper {
+.date-time-wrapper .form-group {
+    height: 4.875rem;
+}
+
+.date-time-wrapper .date-wrapper {
     display: flex;
     align-items: center;
+    height: 100%;
     gap: 0.5rem;
     border: 1px solid var(--border-primary);
     padding: 0.75rem;
@@ -152,7 +157,7 @@
     }
 }
 
-.date-time-wrapper .date-wrapper input, .hour-wrapper input {
+.date-time-wrapper .date-wrapper input {
     flex: 1;
     background-color: transparent;
     font: var(--font-input);
@@ -167,6 +172,36 @@
         right: 0;
         cursor: pointer;
     }
+}
+
+.date-time-wrapper .hour-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 0.5rem;
+    border: 1px solid var(--border-primary);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+    &:hover {
+        border-color: var(--border-secondary);
+    }
+
+    &:focus, &:focus-within {
+        border-color: var(--border-brand);
+    }
+}
+
+.date-time-wrapper .hour-wrapper select {
+    flex: 1;
+    background-color: transparent;
+    font: var(--font-input);
+    color: var(--content-primary);
+    background-color: var(--background-tertiary);
+    opacity: 1;
+    appearance: none;
+    cursor: pointer;
 }
 
 .modal-actions {

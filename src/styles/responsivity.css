@@ -1,0 +1,35 @@
+@media(width >= 53.25rem) {
+    main {
+        padding: 5rem;
+    }
+    
+    .main-layout {
+        max-width: 53.25rem;
+        margin: 0 auto;
+    }
+    
+    .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .date-time-wrapper {
+        flex-direction: row;
+    }
+
+    .date-time-wrapper .form-group {
+        flex: 1;
+    }
+}
+
+@media(width >= 64rem) {
+    main {
+        flex: 0;
+    }
+
+    .wrapper-button {
+        background-color: transparent;
+        text-align: center;
+        margin-left: 39rem;
+    }
+}
