@@ -32,6 +32,7 @@ function setMinDate() {
 
 function openModal() {
     setMinDate();
+    updateAvailableHours();
     modal.showModal();
 }
 
@@ -137,6 +138,39 @@ function isDateInPast(date) {
     return selectedDate.isBefore(today);
 }
 
+// Verifica se o horário já está ocupado para uma determinada data
+// Retorna true se o horário estiver ocupado, false se estiver disponível
+function isHourOccupied(date, hour) {
+    return schedules.some(schedule =>
+        schedule.date === date && schedule.hour === hour
+    );
+}
+
+// Atualiza o select de horários, desabilitando os horários já ocupados
+// para a data selecionada no formulário
+function updateAvailableHours() {
+    const selectedDate = inputDate.value;
+    const hourSelect = document.getElementById('input-hour');
+    const options = hourSelect.querySelectorAll('option');
+
+    // Se não houver data selecionada, habilita todos os horários
+    if (!selectedDate) {
+        options.forEach(option => {
+            if (option.value) {
+                option.disabled = false;
+            }
+        });
+        return;
+    }
+
+    // Percorre todas as opções de horário e desabilita as ocupadas
+    options.forEach(option => {
+        if (option.value) {
+            option.disabled = isHourOccupied(selectedDate, option.value);
+        }
+    });
+}
+
 // Manipula o envio do formulário de agendamento
 function handleSubmit(event) {
     // Previne o comportamento padrão do formulário (recarregar a página)
@@ -153,6 +187,12 @@ function handleSubmit(event) {
     // Validação extra: impede agendamentos em datas passadas
     if (isDateInPast(data.date)) {
         alert('Não é possível criar agendamentos em datas passadas.');
+        return;
+    }
+
+    // Validação: impede agendamentos duplicados no mesmo horário e data
+    if (isHourOccupied(data.date, data.hour)) {
+        alert(`O horário ${data.hour} já está ocupado para o dia ${dayjs(data.date).format('DD/MM/YYYY')}. Por favor, escolha outro horário.`);
         return;
     }
 
@@ -192,6 +232,10 @@ modalCloseBtn.addEventListener('click', closeModal);
 modal.addEventListener('click', handleBackdropClick);
 modalForm.addEventListener('submit', handleSubmit);
 filterDateInput.addEventListener('change', handleFilterDate);
+inputDate.addEventListener('change', updateAvailableHours);
 
 // Inicializa a data mínima nos inputs ao carregar a página
 setMinDate();
+
+// Define a data atual como valor padrão no filtro de pesquisa
+filterDateInput.value = getTodayDate();
